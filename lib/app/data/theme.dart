@@ -1,6 +1,7 @@
 import 'package:al_khalifa_dashboard/app/data/app_colors.dart';
 import 'package:al_khalifa_dashboard/app/data/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData themeData() {
   return ThemeData(
@@ -15,6 +16,16 @@ ThemeData themeData() {
         borderRadius: BorderRadius.circular(10),
       ),
     ),
-
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        foregroundColor: Colors.white,
+        backgroundColor: AppColors.primaryColor,
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        textStyle: AppTextStyles.medium20.copyWith(color: AppColors.whiteColor),
+      ),
+    ),
   );
 }
