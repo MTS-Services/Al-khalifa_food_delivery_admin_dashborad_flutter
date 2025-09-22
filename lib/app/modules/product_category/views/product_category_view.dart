@@ -63,7 +63,6 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
                 ),
               ],
             ),
-
             SizedBox(height: 20.h),
             Expanded(
               child: GridView.builder(
