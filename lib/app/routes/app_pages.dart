@@ -12,7 +12,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.PRODUCT_CATEGORY;
+  static const INITIAL = Routes.HOMEPAGE;
 
   static final routes = [
     GetPage(
