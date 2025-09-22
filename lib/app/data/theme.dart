@@ -5,6 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData themeData() {
   return ThemeData(
+    scaffoldBackgroundColor: AppColors.whiteColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.whiteColor,
+      scrolledUnderElevation: 0,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 18),
       enabledBorder: OutlineInputBorder(
