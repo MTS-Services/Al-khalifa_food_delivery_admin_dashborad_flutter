@@ -1,14 +1,14 @@
 import 'package:al_khalifa_dashboard/app/data/app_colors.dart';
 import 'package:al_khalifa_dashboard/app/data/app_text_styles.dart';
-import 'package:al_khalifa_dashboard/app/modules/product_category/widget/food_card.dart';
+import 'package:al_khalifa_dashboard/app/modules/menu/widget/menu_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import '../controllers/product_category_controller.dart';
-import '../widget/add_menu_form.dart';
 
-class ProductCategoryView extends GetView<ProductCategoryController> {
-  const ProductCategoryView({super.key});
+import '../../product_category/widget/add_menu_form.dart';
+
+class MenuView extends GetView<MenuController> {
+  const MenuView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +30,7 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
       crossAxisCount = 1;
       mobileDevice = true;
     }
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
@@ -44,15 +45,15 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
                     'Manage Your products and reels',
                     style: desktopDevice
                         ? AppTextStyles.medium36.copyWith(
-                            color: AppColors.blackColor,
-                          )
+                      color: AppColors.blackColor,
+                    )
                         : tabletDevice
                         ? AppTextStyles.medium26.copyWith(
-                            color: AppColors.blackColor,
-                          )
+                      color: AppColors.blackColor,
+                    )
                         : AppTextStyles.medium12.copyWith(
-                            color: AppColors.blackColor,
-                          ),
+                      color: AppColors.blackColor,
+                    ),
                   ),
                 ),
                 SizedBox(width: 8.w),
@@ -65,7 +66,7 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
                     );
                   },
                   child: Text(
-                    'Add a new product',
+                    'Add Menu',
                     style: desktopDevice
                         ? TextStyle(fontSize: 16.sp)
                         : tabletDevice
@@ -91,7 +92,7 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
                       : 330.w,
                 ),
                 itemBuilder: (context, index) {
-                  return const FoodCard();
+                  return const MenuCard();
                 },
               ),
             ),
@@ -156,7 +157,6 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
       ),
     );
   }
-
   Future<void> showAddMenuDialog(
       BuildContext context,
       List<String> categories, {
@@ -176,5 +176,4 @@ class ProductCategoryView extends GetView<ProductCategoryController> {
       },
     );
   }
-
 }

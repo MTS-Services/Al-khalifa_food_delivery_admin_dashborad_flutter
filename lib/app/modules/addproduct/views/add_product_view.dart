@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import '../controllers/addproduct_controller.dart';
 
-class AddproductView extends GetView<AddproductController> {
-  const AddproductView({super.key});
+class AddProductView extends GetView<AddproductController> {
+  const AddProductView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

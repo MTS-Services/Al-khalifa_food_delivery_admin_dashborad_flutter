@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../menu/views/menu_view.dart';
 import '../../product_category/views/product_category_view.dart';
 import '../controllers/homepage_controller.dart';
 
@@ -13,7 +14,7 @@ class HomepageView extends GetView<HomepageController> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -29,6 +30,7 @@ class HomepageView extends GetView<HomepageController> {
           children: [
             UserDashBord(),
             ProductCategoryView(),
+            MenuView(),
             Center(
               child: Text(
                 'Category Content',
@@ -49,6 +51,7 @@ class HomepageView extends GetView<HomepageController> {
           tabs: const [
             Tab(text: 'User dashboard'),
             Tab(text: 'Products'),
+            Tab(text: 'Party Menu'),
             Tab(text: 'Category'),
           ],
           indicatorColor: Colors.green,

@@ -27,7 +27,7 @@ ThemeData themeData() {
         backgroundColor: AppColors.primaryColor,
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(8.r),
         ),
         textStyle: AppTextStyles.medium20.copyWith(color: AppColors.whiteColor),
       ),

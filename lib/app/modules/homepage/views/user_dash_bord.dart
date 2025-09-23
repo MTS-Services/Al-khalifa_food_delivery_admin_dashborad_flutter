@@ -100,20 +100,6 @@ class UserDashBord extends StatelessWidget {
                  ),
                ],
              ),
-             ElevatedButton(
-               style: ElevatedButton.styleFrom(
-                 backgroundColor: AppColors.greenLightColor,
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(8),
-                   side: BorderSide(color: AppColors.primaryColor),
-                 ),
-               ),
-               onPressed: () {},
-               child: Text(
-                 "Add product",
-                 style: TextStyle(color: AppColors.primaryColor),
-               ),
-             ),
            ],
          );
        },
