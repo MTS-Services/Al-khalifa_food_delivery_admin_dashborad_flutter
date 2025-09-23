@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
-
-import '../modules/addproduct/bindings/addproduct_binding.dart';
-import '../modules/addproduct/views/add_product_view.dart';
+import '../modules/categories/bindings/addproduct_binding.dart';
+import '../modules/categories/views/categories_screen.dart';
 import '../modules/homepage/bindings/homepage_binding.dart';
 import '../modules/homepage/views/homepage_view.dart';
 import '../modules/menu/bindings/menu_binding.dart';
@@ -24,7 +23,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.ADDPRODUCT,
-      page: () => const AddProductView(),
+      page: () => const CategoriesScreen(),
       binding: AddproductBinding(),
     ),
     GetPage(

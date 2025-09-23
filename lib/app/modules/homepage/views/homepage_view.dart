@@ -3,7 +3,7 @@ import 'package:al_khalifa_dashboard/app/modules/homepage/views/user_dash_bord.d
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
+import '../../categories/views/categories_screen.dart';
 import '../../menu/views/menu_view.dart';
 import '../../product_category/views/product_category_view.dart';
 import '../controllers/homepage_controller.dart';
@@ -31,12 +31,7 @@ class HomepageView extends GetView<HomepageController> {
             UserDashBord(),
             ProductCategoryView(),
             MenuView(),
-            Center(
-              child: Text(
-                'Category Content',
-                style: TextStyle(fontSize: 20.sp),
-              ),
-            ),
+            CategoriesScreen()
           ],
         ),
       ),

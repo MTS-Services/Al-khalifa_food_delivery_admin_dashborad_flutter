@@ -4,5 +4,6 @@ class ImagePath{
   static const String appLogo ='$baseUrl/AppLogo.png';
   static const String dummyImage ='$baseUrl/dummyimage.png';
   static const String burgerImage ='$baseUrl/Rectangle 1.png';
+  static const String menuItem ='$baseUrl/menuitem.png';
 
 }

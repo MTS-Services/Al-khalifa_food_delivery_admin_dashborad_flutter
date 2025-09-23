@@ -14,7 +14,7 @@ abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const HOMEPAGE = '/homepage';
-  static const ADDPRODUCT = '/addproduct';
+  static const ADDPRODUCT = '/categories';
   static const PRODUCT_CATEGORY = '/product-category';
   static const MENU = '/menu';
 }
