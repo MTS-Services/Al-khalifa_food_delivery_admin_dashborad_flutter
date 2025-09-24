@@ -3,8 +3,14 @@ import 'package:flutter/material.dart';
 
 import '../widget/withdrawal_history_table.dart';
 
-class UserDashBord extends StatelessWidget {
-   UserDashBord({super.key});
+class UserDashBord extends StatefulWidget {
+   const UserDashBord({super.key});
+
+  @override
+  State<UserDashBord> createState() => _UserDashBordState();
+}
+
+class _UserDashBordState extends State<UserDashBord> {
   List<Map<String, String>> sampleData = [
     {
       "name": "Kathryn Murphy",
@@ -28,6 +34,7 @@ class UserDashBord extends StatelessWidget {
       "address": "4140 Parker Rd. Allentown, New Mexico 31134"
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,5 +112,4 @@ class UserDashBord extends StatelessWidget {
        },
      );
    }
-
 }

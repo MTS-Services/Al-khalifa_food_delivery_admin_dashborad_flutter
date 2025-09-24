@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ThemeData themeData() {
   return ThemeData(
-    scaffoldBackgroundColor: AppColors.whiteColor,
+    scaffoldBackgroundColor: Color(0xfff9fafb),
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.whiteColor,
       scrolledUnderElevation: 0,

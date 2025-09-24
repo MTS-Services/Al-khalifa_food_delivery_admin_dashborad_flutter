@@ -1,3 +1,5 @@
+import 'package:al_khalifa_dashboard/app/data/app_colors.dart';
+import 'package:al_khalifa_dashboard/app/data/app_text_styles.dart';
 import 'package:al_khalifa_dashboard/app/data/image_path.dart';
 import 'package:al_khalifa_dashboard/app/modules/homepage/views/user_dash_bord.dart';
 import 'package:flutter/material.dart';
@@ -13,25 +15,39 @@ class HomepageView extends GetView<HomepageController> {
 
   @override
   Widget build(BuildContext context) {
+    // scale AppBar height with screenutil
+    final double barHeight = 88.h; // 88 logical pixels scaled
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: barHeight,
+          leadingWidth: barHeight, // match the height for square logo area
+          surfaceTintColor: Colors.transparent,
+          elevation: 6, // 👈 adds shadow
+          shadowColor: Colors.black.withAlpha(77), // 👈 customize shadow color
           centerTitle: true,
+          titleSpacing: 0,
+          leading: Padding(
+            padding: EdgeInsets.only(left: 8.w),
+            child: SizedBox(
+              height: barHeight,
+              width: barHeight, // square box
+              child: Image.asset(ImagePath.appLogo, fit: BoxFit.contain),
+            ),
+          ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(ImagePath.appLogo, height: 80.h),
-              _buildExpanded(),
-            ],
+            children: [_buildExpanded()],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             UserDashBord(),
             ProductCategoryView(),
             MenuView(),
-            CategoriesScreen()
+            CategoriesScreen(),
           ],
         ),
       ),
@@ -39,22 +55,23 @@ class HomepageView extends GetView<HomepageController> {
   }
 
   Widget _buildExpanded() {
-    return Expanded(
-      child: Center(
-        child: TabBar(
-          isScrollable: true,
-          tabs: const [
-            Tab(text: 'User dashboard'),
-            Tab(text: 'Products'),
-            Tab(text: 'Party Menu'),
-            Tab(text: 'Category'),
-          ],
-          indicatorColor: Colors.green,
-          labelColor: Colors.green,
-          unselectedLabelColor: Colors.grey,
-          labelStyle: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
-          unselectedLabelStyle: TextStyle(fontSize: 14.sp),
-        ),
+    return Center(
+      child: TabBar(
+        isScrollable: true,
+        tabs: const [
+          Tab(text: 'User dashboard'),
+          Tab(text: 'Products'),
+          Tab(text: 'Party Menu'),
+          Tab(text: 'Category'),
+        ],
+        indicatorColor: AppColors.primaryColor,
+        dividerHeight: 0,
+        splashFactory: NoSplash.splashFactory,
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        labelColor: AppColors.primaryColor,
+        unselectedLabelColor: Colors.grey,
+        labelStyle: AppTextStyles.bold16,
+        unselectedLabelStyle: AppTextStyles.medium16,
       ),
     );
   }

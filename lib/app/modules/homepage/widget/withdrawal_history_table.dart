@@ -1,4 +1,6 @@
+import 'package:al_khalifa_dashboard/app/data/app_text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/app_colors.dart';
 
 class WithdrawalHistoryTable extends StatelessWidget {
@@ -10,7 +12,7 @@ class WithdrawalHistoryTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(12),
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12),
@@ -21,7 +23,7 @@ class WithdrawalHistoryTable extends StatelessWidget {
           const Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(12.0),
               child: Text(
                 "Withdrawal History",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -41,8 +43,16 @@ class WithdrawalHistoryTable extends StatelessWidget {
   Widget _buildTableHeader() {
     return Center(
       child: Container(
-        color: AppColors.greenLightColor,
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+        decoration: BoxDecoration(
+          color: AppColors.greenLightColor,
+          border: const Border(
+            top: BorderSide(
+              color: Colors.black, // border color
+              width: 1.0, // border thickness
+            ),
+          ),
+        ),
         child: Row(
           children: [
             Expanded(
@@ -88,17 +98,32 @@ class WithdrawalHistoryTable extends StatelessWidget {
 
   Widget _buildTableRow(Map<String, String> item) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
       decoration: BoxDecoration(
         border: Border(bottom: BorderSide(color: AppColors.primaryColor)),
       ),
       child: Row(
         children: [
-          Expanded(flex: 2, child: Text(item["name"] ?? "")),
-          Expanded(flex: 2, child: Text(item["phone"] ?? "")),
-          Expanded(flex: 2, child: Text(item["email"] ?? "")),
-          Expanded(flex: 2, child: Text(item["city"] ?? "")),
-          Expanded(flex: 3, child: Text(item["address"] ?? "")),
+          Expanded(
+            flex: 2,
+            child: Text(item["name"] ?? "", style: AppTextStyles.regular16),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(item["phone"] ?? "", style: AppTextStyles.regular16),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(item["email"] ?? "", style: AppTextStyles.regular16),
+          ),
+          Expanded(
+            flex: 2,
+            child: Text(item["city"] ?? "", style: AppTextStyles.regular16),
+          ),
+          Expanded(
+            flex: 3,
+            child: Text(item["address"] ?? "", style: AppTextStyles.regular16),
+          ),
         ],
       ),
     );
@@ -106,34 +131,46 @@ class WithdrawalHistoryTable extends StatelessWidget {
 
   Widget _buildFooter() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(color: AppColors.primaryColor, width: 1.5),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          child: const Text(
-            "Previous",
-            style: TextStyle(color: AppColors.primaryColor),
+        Padding(
+          padding: EdgeInsets.only(left: 10.w),
+          child: Text(
+            'Showing 1 to 6 out of 6 result',
+            style: AppTextStyles.regular16.apply(color: AppColors.primaryColor),
           ),
         ),
-        const SizedBox(width: 8),
-        OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(color: AppColors.primaryColor, width: 1.5),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
+        Row(
+          children: [
+            OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(color: AppColors.primaryColor, width: 1.5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: const Text(
+                "Previous",
+                style: TextStyle(color: AppColors.primaryColor),
+              ),
             ),
-          ),
-          child: const Text(
-            "Next",
-            style: TextStyle(color: AppColors.primaryColor),
-          ),
+            const SizedBox(width: 8),
+            OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                side: BorderSide(color: AppColors.primaryColor, width: 1.5),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: const Text(
+                "Next",
+                style: TextStyle(color: AppColors.primaryColor),
+              ),
+            ),
+            const SizedBox(width: 8),
+          ],
         ),
       ],
     );
