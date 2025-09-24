@@ -1,22 +1,59 @@
+import 'package:al_khalifa_dashboard/app/data/image_path.dart';
+import 'package:al_khalifa_dashboard/app/modules/homepage/views/user_dash_bord.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
+import '../../categories/views/categories_screen.dart';
+import '../../menu/views/menu_view.dart';
+import '../../product_category/views/product_category_view.dart';
 import '../controllers/homepage_controller.dart';
 
 class HomepageView extends GetView<HomepageController> {
   const HomepageView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HomepageView'),
-        centerTitle: true,
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(ImagePath.appLogo, height: 80.h),
+              _buildExpanded(),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            UserDashBord(),
+            ProductCategoryView(),
+            MenuView(),
+            CategoriesScreen()
+          ],
+        ),
       ),
-      body: const Center(
-        child: Text(
-          'HomepageView is working',
-          style: TextStyle(fontSize: 20),
+    );
+  }
+
+  Widget _buildExpanded() {
+    return Expanded(
+      child: Center(
+        child: TabBar(
+          isScrollable: true,
+          tabs: const [
+            Tab(text: 'User dashboard'),
+            Tab(text: 'Products'),
+            Tab(text: 'Party Menu'),
+            Tab(text: 'Category'),
+          ],
+          indicatorColor: Colors.green,
+          labelColor: Colors.green,
+          unselectedLabelColor: Colors.grey,
+          labelStyle: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold),
+          unselectedLabelStyle: TextStyle(fontSize: 14.sp),
         ),
       ),
     );

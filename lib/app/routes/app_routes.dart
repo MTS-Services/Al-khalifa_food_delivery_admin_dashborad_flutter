@@ -7,12 +7,14 @@ abstract class Routes {
   static const HOMEPAGE = _Paths.HOMEPAGE;
   static const ADDPRODUCT = _Paths.ADDPRODUCT;
   static const PRODUCT_CATEGORY = _Paths.PRODUCT_CATEGORY;
+  static const MENU = _Paths.MENU;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const HOMEPAGE = '/homepage';
-  static const ADDPRODUCT = '/addproduct';
+  static const ADDPRODUCT = '/categories';
   static const PRODUCT_CATEGORY = '/product-category';
+  static const MENU = '/menu';
 }
