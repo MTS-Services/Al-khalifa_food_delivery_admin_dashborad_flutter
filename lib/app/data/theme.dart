@@ -26,11 +26,10 @@ ThemeData themeData() {
         foregroundColor: Colors.white,
         backgroundColor: AppColors.primaryColor,
         padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 14.w),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.r),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
         textStyle: AppTextStyles.medium20.copyWith(color: AppColors.whiteColor),
       ),
     ),
+    dialogTheme: DialogThemeData(backgroundColor: AppColors.whiteColor),
   );
 }
